@@ -7,6 +7,6 @@
 ## :)
 
 ## run the example:
-$: git clone git@github.com:raskri/react-shaka-player.git
-$: npm install
-$: npm start
+- $: git clone git@github.com:raskri/react-shaka-player.git
+- $: npm install
+- $: npm start
