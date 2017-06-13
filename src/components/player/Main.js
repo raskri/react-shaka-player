@@ -17,14 +17,10 @@ class Main extends Component {
 			// This browser does not have the minimum set of APIs we need.
 			console.error('Browser not supported!');
 		}
-  	}
+	}
 
-  	initPlayer(){
-		var video = document.getElementById('video');
-		var player = new shaka.Player(video);
-
-		// Attach player to the window to make it easy to access in the JS console.
-		window.player = player;
+	initPlayer(){
+		var player = new shaka.Player(this.refs.video);
 
 		// Listen for error events.
 		player.addEventListener('error', this.onErrorEvent);
@@ -47,19 +43,19 @@ class Main extends Component {
 		console.error('Error code', error.code, 'object', error);
 	}
 
-  	componentWillUnmount() {
-  		// unmount stuff
-  		// kill stream hogging...:)
-  	}
+	componentWillUnmount() {
+		// unmount stuff
+		// kill stream hogging...:)
+	}
 
 	render() {
    		return (
 	    	<div>
 		    	<h2>Player</h2>
-		    	<video id="video"
-	           		width="640"
+		    	<video ref="video"
+	           	width="640"
 	       			poster="//shaka-player-demo.appspot.com/assets/poster.jpg"
-	           		controls autoPlay>
+	           	controls autoPlay>
 	       		</video>
 	    	</div>
 	    );
